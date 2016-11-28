@@ -12,6 +12,7 @@ cask "spotify"
 cask "vlc"
 cask "slack"
 cask "notion"
+cask "sketch"
 
 # Utilities
 cask "alfred"
