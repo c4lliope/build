@@ -1,0 +1,14 @@
+set -e
+
+eval $(docker-machine env default)
+
+docker build -t graysonwright/fish ~/.dotfiles/docker/fish
+
+docker run --rm \
+  -it \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v $HOME:$HOME \
+  -e HOME=$HOME \
+  -e fish_user_paths=$PWD/bin \
+  --workdir $PWD \
+  graysonwright/fish fish
