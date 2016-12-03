@@ -39,7 +39,6 @@ RUN git clone https://github.com/neovim/neovim.git nvim && \
 
 ENV PATH "/root/bin:$PATH"
 ENV XDG_CONFIG_HOME=/config
-ADD config $XDG_CONFIG_HOME/nvim
 
 # Install Dein as a package/plugin manager
 RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh &&\
@@ -47,3 +46,9 @@ RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.
   rm /tmp/installer.sh
 
 WORKDIR /base
+
+# Add custom configuration
+ADD config $XDG_CONFIG_HOME/nvim
+
+# Install plugins with Dein
+RUN nvim -c "call dein#install()" -c qall

@@ -14,7 +14,6 @@ call dein#begin('/config/dein')
 call dein#add('Shougo/dein.vim')
 
 " Movement & Editing
-call dein#add('kana/vim-textobj-indent')
 call dein#add('christoomey/vim-sort-motion')
 
 " Required:
