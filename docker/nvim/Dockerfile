@@ -3,7 +3,6 @@ MAINTAINER Krispin Schulz <krispinone@gmail.com>
 ENV CMAKE_EXTRA_FLAGS=-DENABLE_JEMALLOC=OFF
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk add --update-cache --virtual build-deps --no-cache \
-    curl \
     autoconf \
     automake \
     cmake \
@@ -19,6 +18,7 @@ RUN apk add --update-cache --virtual build-deps --no-cache \
     lua-sec
 
 RUN apk add --update-cache \
+    curl \
     git \
     libtermkey \
     unibilium
@@ -40,5 +40,10 @@ RUN git clone https://github.com/neovim/neovim.git nvim && \
 ENV PATH "/root/bin:$PATH"
 ENV XDG_CONFIG_HOME=/config
 ADD config $XDG_CONFIG_HOME/nvim
+
+# Install Dein as a package/plugin manager
+RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh &&\
+  sh /tmp/installer.sh $XDG_CONFIG_HOME/dein &&\
+  rm /tmp/installer.sh
 
 WORKDIR /base
