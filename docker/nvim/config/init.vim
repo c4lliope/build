@@ -17,6 +17,9 @@ call dein#add('Shougo/dein.vim')
 call dein#add('christoomey/vim-sort-motion')
 call dein#add('terryma/vim-multiple-cursors')
 
+" File navigation
+call dein#add('ctrlpvim/ctrlp.vim')
+
 " Autocomplete
 call dein#add('Shougo/deoplete.nvim')
 
