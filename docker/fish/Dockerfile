@@ -5,6 +5,7 @@ RUN apk add -U \
   bash \
   fish\
   git \
+  git-perl \
   hub \
   openssh \
   the_silver_searcher \
