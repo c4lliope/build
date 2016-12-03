@@ -15,6 +15,7 @@ call dein#add('Shougo/dein.vim')
 
 " Movement & Editing
 call dein#add('christoomey/vim-sort-motion')
+call dein#add('terryma/vim-multiple-cursors')
 
 " Required:
 call dein#end()
@@ -60,3 +61,7 @@ autocmd FileType gitcommit :set colorcolumn=51
 
 inoremap kj <esc>
 inoremap jk <esc>
+
+" Multiple cursor configuration
+let g:multi_cursor_exit_from_insert_mode=0
+let g:multi_cursor_exit_from_visual_mode=0
