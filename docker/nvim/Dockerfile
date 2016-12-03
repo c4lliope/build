@@ -38,5 +38,7 @@ RUN git clone https://github.com/neovim/neovim.git nvim && \
     apk del build-deps
 
 ENV PATH "/root/bin:$PATH"
+ENV XDG_CONFIG_HOME=/config
+ADD config $XDG_CONFIG_HOME/nvim
 
 WORKDIR /base

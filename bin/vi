@@ -1,2 +1,9 @@
 #!/bin/sh
-docker run --rm -it -v $HOME:$HOME -w $(pwd) graysonwright/nvim nvim $@
+docker run\
+  --rm \
+  -it \
+  -v $HOME:$HOME \
+  -e XDG_CONFIG_HOME=/config \
+  -v $(realpath $(dirname $0)/../docker/nvim/config):/config/nvim \
+  -w $(pwd) \
+  graysonwright/nvim nvim $@
