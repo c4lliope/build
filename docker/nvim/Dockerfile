@@ -37,6 +37,14 @@ RUN git clone https://github.com/neovim/neovim.git nvim && \
     rm -rf nvim && \
     apk del build-deps
 
+# Install python3 support for neovim, as required for deocomplete
+RUN apk add --update-cache \
+    gcc \
+    musl-dev \
+    python3 \
+    python3-dev &&\
+    pip3 install neovim
+
 ENV PATH "/root/bin:$PATH"
 ENV XDG_CONFIG_HOME=/config
 
