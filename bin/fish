@@ -2,13 +2,13 @@ set -e
 
 eval $(docker-machine env default)
 
-docker build -t graysonwright/fish ~/.dotfiles/docker/fish
+docker build -t graysonwright/fish $(dirname $0)/../docker/fish
 
 docker run --rm \
   -it \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $HOME:$HOME \
   -e HOME=$HOME \
-  -e fish_user_paths=$PWD/bin \
+  -e fish_user_paths=$(dirname $0) \
   --workdir $PWD \
   graysonwright/fish fish
