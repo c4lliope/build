@@ -20,7 +20,9 @@ docker run --rm -it \
   -e XDG_CONFIG_HOME=/config \
   \
   -v $HOME:$HOME \
+  \
   -v $DEVFILES_PATH/docker/nvim/config:/config/nvim \
+  -v $DEVFILES_PATH/docker/git/config:/config/git \
   \
   --workdir $USER_WORKING_DIR \
   \
