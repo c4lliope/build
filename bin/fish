@@ -1,6 +1,9 @@
+#!/bin/sh
 set -e
 
-eval $(docker-machine env default)
+# If docker-machine exists,
+# make sure the required environment variables are set for this script.
+command -v docker-machine >/dev/null 2>&1 && eval $(docker-machine env default)
 
 # Change into dev directory,
 # so all following commands are run in the correct context.
@@ -8,7 +11,7 @@ USER_WORKING_DIR=$PWD
 cd $(dirname $0)/..
 DEVFILES_PATH=$PWD
 
-docker build -t graysonwright/fish docker/fish
+# docker build -t graysonwright/fish docker/fish
 
 docker run --rm -it \
   \
@@ -22,4 +25,5 @@ docker run --rm -it \
   -v $DEVFILES_PATH/docker/git/config:/config/git \
   \
   --workdir $USER_WORKING_DIR \
+  \
   graysonwright/fish fish
