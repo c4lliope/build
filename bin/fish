@@ -2,14 +2,24 @@ set -e
 
 eval $(docker-machine env default)
 
-# docker build -t graysonwright/fish $(dirname $0)/../docker/fish
+# Change into dev directory,
+# so all following commands are run in the correct context.
+USER_WORKING_DIR=$PWD
+cd $(dirname $0)/..
+DEVFILES_PATH=$PWD
 
-docker run --rm \
-  -it \
+docker build -t graysonwright/fish docker/fish
+
+docker run --rm -it \
+  \
+  -e HOME=$HOME \
+  -e XDG_CONFIG_HOME=/config \
+  -e fish_user_paths=$DEVFILES_PATH/bin \
+  \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $HOME/.ssh:/root/.ssh \
   -v $HOME:$HOME \
-  -e HOME=$HOME \
-  -e fish_user_paths=$(dirname $0) \
-  --workdir $PWD \
+  -v $DEVFILES_PATH/docker/git/config:/config/git \
+  \
+  --workdir $USER_WORKING_DIR \
   graysonwright/fish fish
