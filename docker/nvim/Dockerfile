@@ -50,13 +50,13 @@ ENV XDG_CONFIG_HOME=/config
 
 # Install Dein as a package/plugin manager
 RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh &&\
-  sh /tmp/installer.sh $XDG_CONFIG_HOME/dein &&\
+  sh /tmp/installer.sh /dein &&\
   rm /tmp/installer.sh
 
 WORKDIR /base
 
 # Add custom configuration
-ADD config $XDG_CONFIG_HOME/nvim
+ADD config $XDG_CONFIG_HOME
 
 # Install plugins with Dein
 RUN nvim -c "call dein#install()" -c qall

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  fish:
+    image: graysonwright/fish
+    build:
+      context: .
+      dockerfile: docker/fish/Dockerfile
+
+  nvim:
+    image: graysonwright/nvim
+    build:
+      context: .
+      dockerfile: docker/nvim/Dockerfile

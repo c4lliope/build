@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/config/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/config/dein')
+call dein#begin('/dein')
 
 " Let dein manage dein
 " Required:

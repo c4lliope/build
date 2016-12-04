@@ -11,3 +11,7 @@ RUN apk add -U \
   the_silver_searcher \
   tmux \
   tree
+
+# Add custom configuration
+ADD config $XDG_CONFIG_HOME
+
