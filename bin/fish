@@ -16,7 +16,9 @@ DEVFILES_PATH=$PWD
 docker run --rm -it \
   \
   -e HOME=$HOME \
+  -e DEVFILES_PATH=$DEVFILES_PATH \
   -e XDG_CONFIG_HOME=/config \
+  -e EDITOR=$DEVFILES_PATH/bin/vi \
   -e fish_user_paths=$DEVFILES_PATH/bin \
   \
   -v $HOME:$HOME \
