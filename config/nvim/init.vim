@@ -20,9 +20,6 @@ call dein#add('terryma/vim-multiple-cursors')
 " File navigation
 call dein#add('ctrlpvim/ctrlp.vim')
 
-" Autocomplete
-call dein#add('Shougo/deoplete.nvim')
-
 " Required:
 call dein#end()
 
@@ -71,6 +68,3 @@ inoremap jk <esc>
 " Multiple cursor configuration
 let g:multi_cursor_exit_from_insert_mode=0
 let g:multi_cursor_exit_from_visual_mode=0
-
-" start up autocomplete
-call deoplete#enable()

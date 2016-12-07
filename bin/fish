@@ -18,7 +18,7 @@ docker run --rm -it \
   -e HOME=$HOME \
   -e DEVFILES_PATH=$DEVFILES_PATH \
   -e XDG_CONFIG_HOME=/config \
-  -e EDITOR=$DEVFILES_PATH/bin/vi \
+  -e EDITOR=nvim \
   -e fish_user_paths=$DEVFILES_PATH/bin \
   \
   -v $HOME:$HOME \
@@ -28,4 +28,4 @@ docker run --rm -it \
   \
   --workdir $USER_WORKING_DIR \
   \
-  graysonwright/fish fish
+  graysonwright/dev fish
