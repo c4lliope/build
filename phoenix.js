@@ -1,5 +1,8 @@
 "use strict";
 
+// Taken from https://github.com/kgrossjo/phoenix-config/
+// with slight modifications.
+
 function centered_modal(message) {
     var result = new Modal();
     result.message = message;
@@ -87,8 +90,19 @@ PrefixKey.prototype.addSuffix = function (key, modifiers, cb) {
 
 /* Window handling prefix key */
 
-var wPrefix = new PrefixKey('space', ['ctrl', 'alt', 'cmd'],
-    "h/l - Left/Right Half\nc - Center\ng - Wide Center\nm - Max\no/p - big left/right\nO/P - medium left/right\ns - next screen\nesc - Abort");
+const prefix = { key: 'space', modifiers: ['alt'] };
+const helpText = [
+  "h/l - Left/Right Half",
+  "c - Center",
+  "g - Wide Center",
+  "f - Full",
+  "o/p - big left/right",
+  "O/P - medium left/right",
+  "s - next screen",
+  "esc - Abort"
+].join("\n");
+
+var wPrefix = new PrefixKey(prefix.key, prefix.modifiers, helpText);
 wPrefix.addSuffix('h', [], function () {
     move_window({x: 0, y: 0, width: 0.5, height: 1.0});
 });
@@ -98,7 +112,7 @@ wPrefix.addSuffix('l', [], function () {
 wPrefix.addSuffix('g', [], function () {
     move_window({x: 0.15, y: 0, width: 0.7, height: 1.0});
 });
-wPrefix.addSuffix('m', [], function () {
+wPrefix.addSuffix('f', [], function () {
     move_window({x: 0, y: 0, width: 1.0, height: 1.0});
 });
 wPrefix.addSuffix('c', [], function () {
@@ -120,4 +134,4 @@ wPrefix.addSuffix('s', [], function () {
     move_window_to_next_screen();
 });
 wPrefix.addSuffix('escape', [], function () {});
-wPrefix.addSuffix('space', ['ctrl', 'alt', 'cmd'], function () {});
+wPrefix.addSuffix(prefix.key, prefix.modifiers, function () {});
