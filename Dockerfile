@@ -44,6 +44,14 @@ RUN git clone https://github.com/neovim/neovim.git nvim && \
     rm -rf nvim && \
     apk del build-deps
 
+# Install python3 support for neovim, required by some plugins
+RUN apk add --update-cache \
+    gcc \
+    musl-dev \
+    python3 \
+    python3-dev &&\
+    pip3 install neovim
+
 # Install Dein as a package/plugin manager
 RUN curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh &&\
   sh /tmp/installer.sh /dein &&\
