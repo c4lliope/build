@@ -1,3 +1,3 @@
 function vi
-	nvim  $argv;
+  reattach-to-user-namespace nvim $argv;
 end
