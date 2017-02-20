@@ -14,7 +14,9 @@
   # Navigate around the git tree
   b = branch
   c = commit -v
+  co = checkout
   f = fetch
+  feat = checkout master -b
   m = merge
   r = remote
 
@@ -24,17 +26,25 @@
   kf = push --force-with-lease
 
   # Easily edit ignore files
-  i = !"$EDITOR .gitignore"
-  e = !"$EDITOR .git/info/exclude"
+  i = !"nvim .gitignore"
+  e = !"nvim .git/info/exclude"
 
   # Take a detailed look at the state of the git tree
   lg = log --graph --all --format=format:'%C(red)%h%C(reset) %C(cyan)(%ar)%C(reset) %s %C(yellow)-%aN%C(reset)%C(blue)%d%C(reset)' --abbrev-commit --date=relative
+
+  # Work with GitHub
+  pr = !"git rebase -i origin/master && git push -f && hub pull-request"
 
 [color]
   ui = true
 
 [core]
-  pager = more
+  pager = less
+  editor = nvim
+  commentchar = |
+
+[push]
+  default = current
 
 [user]
   email = wright.grayson@gmail.com
