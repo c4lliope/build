@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Exit if any subcommand fails
 set -e
 
@@ -8,13 +10,25 @@ set -e
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 
-# Clone our dotfiles if they have not been already
-if [ ! -d  ~/.dotfiles ]; then
-  git clone  https://github.com/graysonwright/dotfiles ~/.dotfiles
+# Clone our devfiles if they have not been already
+if [ ! -d  ~/.dev ]; then
+  git clone  https://github.com/graysonwright/dev ~/.dev
 fi
 
-# Install the programs and applications defined in `~/.dotfiles/Brewfile`
-cd ~/.dotfiles && brew bundle
+# Install the programs and applications defined in `~/.dev/Brewfile`
+cd ~/.dev && brew bundle
+
+# Add python support in NeoVim, required for a number of plugins
+pip3 install neovim
+
+# Link up configuration files
+if [ ! -e ~/.config ]; then
+  ln -s ~/.dev/config ~/.config
+fi
+
+if [ ! -e ~/.phoenix.js ]; then
+  ln -s ~/.dev/phoenix.js ~/.phoenix.js
+fi
 
 # If there is not a virtual machine for our Docker host to run on,
 # create one.
