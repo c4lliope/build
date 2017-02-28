@@ -35,6 +35,9 @@
   # Work with GitHub
   pr = !"git rebase -i origin/master && git push -f && hub pull-request"
 
+  # Trust the directory's bin scripts
+  trust = !"mkdir .git/safe"
+
 [color]
   ui = true
 
