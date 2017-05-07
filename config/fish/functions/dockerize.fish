@@ -1,6 +1,6 @@
 function dockerize
   cp ~/.config/fish/templates/dockerize/* .
 
-  mkdir bin
+  mkdir bin 2> /dev/null
   cp (which docker-compose) bin/
 end
