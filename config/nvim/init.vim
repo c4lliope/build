@@ -58,6 +58,7 @@ let mapleader=" "
 
 " Specific configuration files
 source ~/.config/nvim/config/buffers.vim
+source ~/.config/nvim/config/ctrl_p.vim
 source ~/.config/nvim/config/quickfix.vim
 source ~/.config/nvim/config/refactorings.vim
 source ~/.config/nvim/config/rspec.vim
