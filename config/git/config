@@ -1,8 +1,8 @@
 [alias]
   # Check working status of repository
   s = status --short
-  d = diff -w --patience
-  dc = diff --cached --patience
+  d  = diff -w --patience
+  dc = diff -w --patience --cached
 
   # Manage staged files
   a = add
