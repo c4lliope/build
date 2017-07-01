@@ -1,3 +1,3 @@
 function dcrun
-	docker-compose run --rm $argv;
+  dc run --rm $argv;
 end
