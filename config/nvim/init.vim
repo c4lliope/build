@@ -1,4 +1,3 @@
-"dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -57,11 +56,12 @@ endif
 let mapleader=" "
 
 " Specific configuration files
-source ~/.config/nvim/config/buffers.vim
+source ~/.config/nvim/config/git.vim
 source ~/.config/nvim/config/ctrl_p.vim
+source ~/.config/nvim/config/navigation.vim
 source ~/.config/nvim/config/quickfix.vim
 source ~/.config/nvim/config/refactorings.vim
-source ~/.config/nvim/config/rspec.vim
+source ~/.config/nvim/config/spec.vim
 source ~/.config/nvim/config/search.vim
 source ~/.config/nvim/config/splits.vim
 source ~/.config/nvim/config/tmux.vim
@@ -103,6 +103,7 @@ nnoremap U <C-r>
 set colorcolumn=81
 autocmd FileType gitcommit :set colorcolumn=51
 
+" Never reach for the escape key
 inoremap kj <esc>
 inoremap jk <esc>
 
@@ -119,13 +120,10 @@ endif
 " Fix NeoVim issue with recognizing <c-h>. It gets recognized as <bs>
 nnoremap <bs> :TmuxNavigateLeft<cr>
 
+" Clear out the `q` buffer to prepare for recursive macros
 nnoremap Q qqqqq
 
 " Recognize additional file extensions
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
-" Ctrl-P to fuzzy-search files
-nnoremap <c-p> :<c-u>Denite file_rec<cr>
-call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
 autocmd! BufWritePost * Neomake
