@@ -30,6 +30,10 @@ if [ ! -e ~/.phoenix.js ]; then
   ln -s ~/.dev/phoenix.js ~/.phoenix.js
 fi
 
+if [ ! -e ~/.hyper.js ]; then
+  ln -s ~/.dev/hyper.js ~/.hyper.js
+fi
+
 # If there is not a virtual machine for our Docker host to run on,
 # create one.
 docker-machine ls -q | grep -q 'default' ||\

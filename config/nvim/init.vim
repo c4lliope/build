@@ -83,10 +83,10 @@ set tabstop=2
 set nowrap
 
 " Colors
-set background=dark
-colorscheme toothpaste
-highlight LineNr ctermbg=none
-highlight CursorLineNr ctermbg=none ctermfg=yellow
+" set background=light
+" colorscheme tomorrow
+highlight LineNr ctermbg=none ctermfg=grey
+highlight CursorLineNr ctermbg=none ctermfg=blue
 
 " Fast editing of .vimrc file
 nnoremap <leader>ve :e $MYVIMRC<CR>
