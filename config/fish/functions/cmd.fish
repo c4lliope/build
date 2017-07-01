@@ -9,5 +9,7 @@ function cmd
     funcsave $argv[1]
   end
 
-  nvim $file
+  reattach-to-user-namespace nvim $file
+
+  source $file
 end
