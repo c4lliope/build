@@ -1,4 +1,4 @@
 function glg
-  g lg | head
+  g lg --color=always | head
   echo
 end
