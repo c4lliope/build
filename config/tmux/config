@@ -1,5 +1,5 @@
 unbind C-b
-set -g prefix C-s
+set -g prefix C-t
 bind-key r source-file ~/.config/tmux/config \; display-message "tmux config file reloaded"
 
 set -s escape-time 0
