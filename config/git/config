@@ -33,7 +33,7 @@
   lg = log --graph --all --format=format:'%C(red)%h%C(reset) %C(cyan)(%ar)%C(reset) %s %C(yellow)-%aN%C(reset)%C(blue)%d%C(reset)' --abbrev-commit --date=relative
 
   # Work with GitHub
-  pr = !"git rebase -i origin/master && git push -f && hub pull-request"
+  pr = !"git rebase -i master && git push --force-with-lease && hub pull-request"
 
   # Trust the directory's bin scripts
   trust = !"mkdir .git/safe"
