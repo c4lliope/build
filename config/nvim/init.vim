@@ -20,6 +20,10 @@ call dein#add('terryma/vim-multiple-cursors')
 call dein#add('tpope/vim-abolish')
 call dein#add('skwp/greplace.vim')
 
+" Interface
+call dein#add('vim-airline/vim-airline')
+call dein#add('Slava/vim-colors-tomorrow')
+
 " File navigation
 call dein#add('Shougo/denite.nvim')
 call dein#add('mileszs/ack.vim')
