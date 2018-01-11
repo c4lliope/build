@@ -36,6 +36,7 @@ call dein#add('blakewilliams/vim-tbro')
 call dein#add('christoomey/vim-tmux-navigator')
 
 " git integration
+call dein#add('tpope/vim-fugitive')
 call dein#add('airblade/vim-gitgutter')
 
 " language support
