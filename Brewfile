@@ -1,44 +1,70 @@
+# Add necessary data sources
 tap "caskroom/cask"
 tap "neovim/neovim"
+
+# Media
+cask "spotify"
+cask "vlc"
+
+# Communication
+cask "gitify"
+cask "screenhero"
+cask "slack"
+cask "vnc-viewer"
+
+# Productivity
+cask "hyper"
+cask "licecap"
+cask "marked"
+cask "notion"
+cask "skitch"
+
+# Dev Workspaces
+brew "fish"
+brew "neovim"
+brew "tmux"
+cask "visual-studio-code"
+
+# Dev Utilities
+brew "fzf"
+brew "gist"
+brew "hub"
+brew "jq"
+brew "reattach-to-user-namespace"
+brew "the_silver_searcher"
+brew "tree"
+brew "wget"
+cask "hex-fiend"
+cask "imageoptim"
+cask "ngrok"
 
 # Install docker dependencies
 brew "docker"
 brew "docker-machine"
 cask "virtualbox"
 
-# Use better apps for browsing, listening to music, and communicating
-cask "google-chrome"
-cask "hyper"
-cask "notion"
+# Design
+cask "glueprint"
+cask "lingo"
+cask "pixelstick"
 cask "sketch"
-cask "slack"
-cask "spotify"
-cask "vlc"
+
+# Games
+cask "minecraft"
+cask "steam"
 
 # Utilities
 cask "alfred"
 cask "apptrap"
 cask "caffeine"
+cask "flux"
+cask "mojibar"
+cask "phoenix"
+
+# Google services
 cask "google-backup-and-sync"
 cask "google-hangouts"
 cask "google-photos-backup"
-cask "imageoptim"
-cask "licecap"
-cask "marked"
-cask "phoenix"
-cask "pixelstick"
-cask "skitch"
 
-# Install dev environment requirements
-brew "fish"
-brew "fzf"
-brew "gist"
-brew "hub"
-brew "jq"
-brew "neovim"
-brew "python3"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
-brew "tree"
-brew "wget"
+# Browsing
+cask "firefox"
