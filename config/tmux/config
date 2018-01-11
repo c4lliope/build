@@ -25,7 +25,7 @@ set-option -g status-fg "#aaaaaa"
 set-option -g pane-active-border-fg blue
 set-option -g pane-active-border-bg blue
 set-option -g status-left-length 50
-set-option -g status-right " #(battery -t)  | #(date '+%a, %b %d - %H:%M') "
+set-option -g status-right ""
 
 bind-key - split-window -v -c "#{pane_current_path}"
 bind-key \ split-window -h -c "#{pane_current_path}"

@@ -1,4 +1,3 @@
-tap "Goles/battery"
 tap "caskroom/cask"
 tap "neovim/neovim"
 
@@ -31,7 +30,6 @@ cask "pixelstick"
 cask "skitch"
 
 # Install dev environment requirements
-brew "battery"
 brew "fish"
 brew "fzf"
 brew "gist"
