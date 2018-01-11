@@ -1,5 +1,5 @@
 function cmd
-  dev
+  meta
     set file config/fish/functions/$argv[1].fish
 
     if test -e $file
@@ -16,5 +16,5 @@ function cmd
     and source $file
     and g a $file
     and g c $file
-  cd -
+  popd
 end
