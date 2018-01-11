@@ -36,8 +36,6 @@ call dein#add('airblade/vim-gitgutter')
 
 " language support
 call dein#add('benekastah/neomake')
-call dein#add('thoughtbot/vim-rspec')
-call dein#add('tpope/vim-rails')
 call dein#add('tpope/vim-endwise')
 
 " Required:
@@ -61,7 +59,6 @@ source ~/.config/nvim/config/ctrl_p.vim
 source ~/.config/nvim/config/navigation.vim
 source ~/.config/nvim/config/quickfix.vim
 source ~/.config/nvim/config/refactorings.vim
-source ~/.config/nvim/config/spec.vim
 source ~/.config/nvim/config/search.vim
 source ~/.config/nvim/config/splits.vim
 source ~/.config/nvim/config/tmux.vim
