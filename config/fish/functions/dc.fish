@@ -1,4 +1,7 @@
 function dc
+  # Make sure the docker environment is loaded
+  set -q DOCKER_HOST; or eval (dm env)
+
   if test -e /usr/local/bin/docker-compose
     # Use the native docker-compose installed by homebrew if it's available.
     # This helps us avoid a caching issue
