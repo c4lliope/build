@@ -8,3 +8,6 @@ nnoremap <leader>t :Tbro
 
 " Repeat the last command run in the terminal pane
 nnoremap <leader>ta :w \| Tbro again<cr>
+
+" Send the line under the cursor to the terminal
+nnoremap <leader>tt :Tbro <c-r>=getline('.')<cr><cr>
