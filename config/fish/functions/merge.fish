@@ -6,7 +6,6 @@ function merge
   and verbose git checkout $branch
   and verbose git rebase -i origin/master
   and verbose git push --force-with-lease
-  and verbose ./bin/docker-compose run web rspec
   and verbose git checkout master
   and verbose git pull
   and verbose git merge --ff-only $branch
