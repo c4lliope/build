@@ -3,6 +3,21 @@
 # Exit if any subcommand fails
 set -e
 
+# Link up configuration files
+for FILE in $(ls ./config); do
+  if [ ! -e ~/.config/$FILE ]; then
+    ln -s ~/.dev/config/$FILE ~/.config/$FILE
+  fi
+done
+
+if [ ! -e ~/.phoenix.js ]; then
+  ln -s ~/.dev/phoenix.js ~/.phoenix.js
+fi
+
+if [ ! -e ~/.hyper.js ]; then
+  ln -s ~/.dev/hyper.js ~/.hyper.js
+fi
+
 # First things first, let's get Homebrew up and running
 # so we can install everything we need within this script.
 # Homebrew will set up the Apple command-line tools during the install process
@@ -23,21 +38,6 @@ cd ~/.dev && brew bundle
 
 # Add python support in NeoVim, required for a number of plugins
 pip3 install neovim
-
-# Link up configuration files
-for FILE in $(ls ./config); do
-  if [ ! -e ~/.config/$FILE ]; then
-    ln -s ~/.dev/config/$FILE ~/.config/$FILE
-  fi
-done
-
-if [ ! -e ~/.phoenix.js ]; then
-  ln -s ~/.dev/phoenix.js ~/.phoenix.js
-fi
-
-if [ ! -e ~/.hyper.js ]; then
-  ln -s ~/.dev/hyper.js ~/.hyper.js
-fi
 
 # If there is not a virtual machine for our Docker host to run on,
 # create one.
