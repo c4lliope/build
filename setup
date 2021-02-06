@@ -12,7 +12,7 @@ brew update
 
 # Clone our devfiles if they have not been already
 if [ ! -d  ~/.dev ]; then
-  git clone  https://github.com/graysonwright/dev ~/.dev
+  git clone  https://github.com/c4lliope/dev ~/.dev
 fi
 
 # Install the programs and applications defined in `~/.dev/Brewfile`
