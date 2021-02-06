@@ -8,7 +8,6 @@ cask "vlc"
 
 # Communication
 cask "gitify"
-cask "screenhero"
 cask "slack"
 cask "vnc-viewer"
 
@@ -44,8 +43,6 @@ brew "docker-machine"
 cask "virtualbox"
 
 # Design
-cask "glueprint"
-cask "lingo"
 cask "pixelstick"
 cask "sketch"
 
@@ -54,17 +51,13 @@ cask "minecraft"
 cask "steam"
 
 # Utilities
-cask "alfred"
 cask "apptrap"
 cask "caffeine"
 cask "flux"
 cask "mojibar"
 cask "phoenix"
 
-# Google services
-cask "google-backup-and-sync"
-cask "google-hangouts"
-cask "google-photos-backup"
-
 # Browsing
 cask "firefox"
+cask "google-chrome"
+cask "chromedriver"
