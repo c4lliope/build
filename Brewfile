@@ -1,5 +1,5 @@
 # Add necessary data sources
-tap "caskroom/cask"
+tap "homebrew/cask"
 tap "neovim/neovim"
 
 # Media
