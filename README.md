@@ -6,5 +6,5 @@ The goal of this project is to provide a lightweight development environment for
 
 ```bash
 git clone git@github.com:c4lliope/dev.git .dev
-.dev/setup
+.dev/launch
 ```
