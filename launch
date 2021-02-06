@@ -7,7 +7,7 @@ set -e
 # so we can install everything we need within this script.
 # Homebrew will set up the Apple command-line tools during the install process
 # See http://brew.sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 
 # Clone our devfiles if they have not been already
