@@ -15,16 +15,21 @@ if [ ! -d  ~/.dev ]; then
   git clone  https://github.com/c4lliope/dev ~/.dev
 fi
 
-# Install the programs and applications defined in `~/.dev/Brewfile`
+# Upgrade
+cd ~/.dev && git pull
+
+# Add programs linked in `~/.dev/Brewfile`
 cd ~/.dev && brew bundle
 
 # Add python support in NeoVim, required for a number of plugins
 pip3 install neovim
 
 # Link up configuration files
-if [ ! -e ~/.config ]; then
-  ln -s ~/.dev/config ~/.config
-fi
+for FILE in $(ls ./config); do
+  if [ ! -e ~/.config/$FILE ]; then
+    ln -s ~/.dev/config/$FILE ~/.config/$FILE
+  fi
+done
 
 if [ ! -e ~/.phoenix.js ]; then
   ln -s ~/.dev/phoenix.js ~/.phoenix.js
