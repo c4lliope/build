@@ -103,12 +103,6 @@ const helpText = [
 ].join("\n");
 
 var wPrefix = new PrefixKey(prefix.key, prefix.modifiers, helpText);
-wPrefix.addSuffix('h', [], function () {
-    move_window({x: 0, y: 0, width: 0.5, height: 1.0});
-});
-wPrefix.addSuffix('l', [], function () {
-    move_window({x: 0.5, y: 0, width: 0.5, height: 1.0});
-});
 wPrefix.addSuffix('g', [], function () {
     move_window({x: 0.15, y: 0, width: 0.7, height: 1.0});
 });
@@ -118,18 +112,27 @@ wPrefix.addSuffix('f', [], function () {
 wPrefix.addSuffix('c', [], function () {
     move_window({x: 0.2, y: 0.2, width: 0.6, height: 0.6});
 });
-wPrefix.addSuffix('o', [], function () {
-    move_window({x: 0, y: 0, width: 0.9, height: 1.0});
+
+wPrefix.addSuffix('h', [], function () {
+    move_window({x: 0, y: 0, width: 0.6, height: 1.0});
 });
-wPrefix.addSuffix('o', ['shift'], function () {
-    move_window({x: 0, y: 0, width: 0.8, height: 1.0});
+wPrefix.addSuffix('l', [], function () {
+    move_window({x: 0.6, y: 0, width: 0.4, height: 1.0});
+});
+
+wPrefix.addSuffix('u', [], function () {
+    move_window({x: 0, y: 0.4, width: 0.6, height: 0.6});
+});
+wPrefix.addSuffix('i', [], function () {
+    move_window({x: 0, y: 0, width: 0.6, height: 0.4});
+});
+wPrefix.addSuffix('o', [], function () {
+    move_window({x: 0.6, y: 0, width: 0.4, height: 0.4});
 });
 wPrefix.addSuffix('p', [], function () {
-    move_window({x: 0.1, y: 0, width: 0.9, height: 1.0});
+    move_window({x: 0.6, y: 0.4, width: 0.4, height: 0.6});
 });
-wPrefix.addSuffix('p', ['shift'], function () {
-    move_window({x: 0.2, y: 0, width: 0.8, height: 1.0});
-});
+
 wPrefix.addSuffix('s', [], function () {
     move_window_to_next_screen();
 });
